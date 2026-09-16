@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tuwebentresdias.github.io/sitio-plomeria-destapar-desagues-cocina-palermo/sitemap.xml

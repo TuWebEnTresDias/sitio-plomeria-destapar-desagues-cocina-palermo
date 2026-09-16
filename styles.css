@@ -42,15 +42,18 @@ nav a:hover { color: var(--green); text-decoration: underline; }
 .eyebrow { margin-bottom: 15px; color: var(--green); font-size: .76rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
 .hero-lead { max-width: 58ch; color: var(--muted); font-size: 1.12rem; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 27px 0 13px; }
-.placeholder-note, .contact-placeholder { color: var(--muted); font-size: .83rem; }
-code { padding: 2px 6px; border-radius: 5px; background: #e5e7dc; color: var(--deep); }
-.hero-image { margin: 0; }
-.hero-image img { width: 100%; aspect-ratio: 1.5; object-fit: cover; border: 10px solid var(--surface); border-radius: 45% 18px 18px 18px; box-shadow: 16px 16px 0 var(--lime); }
-figcaption { margin-top: 13px; color: var(--muted); font-size: .77rem; }
+.prelaunch-note { max-width: 58ch; margin-bottom: 0; color: var(--muted); font-size: .83rem; }
+.hero-image, .local-image-wrap { margin: 0; }
+.hero-image img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 10px solid var(--surface); border-radius: 45% 18px 18px 18px; box-shadow: 16px 16px 0 var(--lime); }
+.hero-image figcaption, .local-image-wrap figcaption { margin-top: 13px; color: var(--muted); font-size: .77rem; }
+.local-image-wrap img { width: 100%; aspect-ratio: 1.5; object-fit: cover; border-radius: 16px; }
+.local-image-wrap figcaption { color: #d3e8dc; }
+.local-image-wrap a { color: var(--lime); }
 .signal-bar { background: var(--deep); color: white; }
 .signal-grid { display: grid; gap: 12px; padding: 21px 0; }
 .signal-grid span { display: flex; align-items: center; gap: 10px; font-size: .93rem; }
 .signal-grid b { color: var(--lime); font-size: .78rem; }
+.section, .local-section, .contact-section { scroll-margin-top: 92px; }
 .section { padding: 86px 0; }
 .split { display: grid; gap: 35px; align-items: start; }
 .split > div:first-child p:not(.eyebrow) { max-width: 59ch; color: var(--muted); }
@@ -67,7 +70,6 @@ figcaption { margin-top: 13px; color: var(--muted); font-size: .77rem; }
 .local-section .local-copy > p:not(.eyebrow) { max-width: 61ch; }
 .local-section .muted { color: #c6e2d7; font-size: .9rem; }
 .local-grid { display: grid; gap: 35px; align-items: center; }
-.local-note { color: var(--ink); }
 .round-mark { display: inline-grid; place-items: center; width: 42px; height: 42px; margin-bottom: 22px; border-radius: 50%; background: var(--lime); color: var(--deep); font-size: 1.35rem; }
 .coverage { background: var(--surface); }
 .coverage-grid { display: grid; gap: 28px; align-items: center; }
@@ -81,13 +83,9 @@ details { border-bottom: 1px solid var(--line); }
 summary { padding: 20px 4px; cursor: pointer; color: var(--deep); font-weight: 800; }
 details p { max-width: 68ch; padding: 0 4px 20px; color: var(--muted); }
 .contact-section { padding: 82px 0; background: #e9eadc; }
-.contact-grid { display: grid; gap: 34px; }
-.contact-grid > div:first-child p:not(.eyebrow) { max-width: 52ch; color: var(--muted); }
-.contact-form { display: grid; gap: 8px; padding: 25px; border-radius: var(--radius); background: var(--surface); }
-label { font-weight: 800; }
-input, textarea { width: 100%; border: 1px solid var(--line); border-radius: 9px; padding: 12px 13px; background: #fff; color: var(--ink); font: inherit; }
-textarea { resize: vertical; }
-.form-note { margin: 4px 0 0; color: var(--green); font-size: .9rem; }
+.contact-state { display: grid; gap: 28px; align-items: center; }
+.contact-state > div p:not(.eyebrow) { max-width: 60ch; color: var(--muted); }
+.state-badge { width: fit-content; margin: 0; padding: 15px 18px; border: 1px solid var(--green); border-radius: 999px; color: var(--green); font-weight: 850; }
 .site-footer { padding: 35px 0 24px; background: var(--deep); color: #d9e8dd; }
 .footer-grid { display: flex; justify-content: space-between; gap: 24px; }
 .footer-grid strong { color: var(--lime); }
@@ -101,7 +99,7 @@ textarea { resize: vertical; }
 @media (min-width: 720px) {
   .hero-grid { grid-template-columns: 1.05fr .95fr; }
   .signal-grid { grid-template-columns: repeat(3, 1fr); }
-  .split, .local-grid, .contact-grid { grid-template-columns: 1.1fr .9fr; }
+  .split, .local-grid, .contact-state { grid-template-columns: 1.1fr .9fr; }
   .coverage-grid { grid-template-columns: 1fr auto; }
 }
 @media (max-width: 680px) {
